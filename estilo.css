@@ -1,7 +1,13 @@
 .direita
 {
-	text-align: right;
+    text-align: right;
 }
+
+.cent
+{
+    text-align: center;
+}
+
 
 input[type=text], select{
     padding: 12px 20px;
@@ -13,6 +19,7 @@ input[type=text], select{
 }
 
 input[type=submit], input[type=reset] {
+    text-align: center;
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
