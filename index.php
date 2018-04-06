@@ -35,13 +35,17 @@
 					</tr>
 				</form>
 			</table>
-			
 		</div>
+		<br>
 
 		<center>
-		<img src='./img/graficoDinheiro.png' alt='' width='400' height='264'>
-		<img src='./img/graficoPessoal.png' alt='' width='400' height='264'>
-		<img src='./img/graficoRisco.png' alt='' width='400' height='264'>
-		</center>";
+			<img src='./img/graficoDinheiro.png' alt='' width='400' height='264'>
+			<img src='./img/graficoPessoal.png' alt='' width='400' height='264'>
+			<img src='./img/graficoRisco.png' alt='' width='400' height='264'>
+		</center>
+
+		<div class='footer'>
+			<p class='rodape'>IFTM - ADS_V - IA - Ronivon Mendes</p>
+		</div>
 </body>
 </html>

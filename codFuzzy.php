@@ -1,4 +1,5 @@
 <?php
+	echo "<link rel='stylesheet' type='text/css' href='estilo.css'>";
 	$capital = $_POST['capital'];
 	$pessoas = $_POST['pessoas'];
 	$mdpouco;
@@ -85,7 +86,7 @@
 	echo "<img src='./img/graficoPessoal.png' alt='' width='400' height='264'>";
 	echo "<img src='./img/graficoRisco.png' alt='' width='400' height='264'>";
 
-	echo "<br><br>";
+	echo "<br>";
 
 	##################################################################################
 	//REGRAS DE INFÊRENCIA
@@ -132,21 +133,26 @@
 		$mrbaixo = $mdadequado;
 	} elseif ($mdadequado>$mpsatisfatorio) {
 		$mrbaixo = $mpsatisfatorio;
-	}elseif ($mdadequado==$mpinsuficiente) {
+	}elseif ($mdadequado==$mpsatisfatorio) {
 		$mrbaixo = $mdadequado;
 	}
 	else
 		$mrbaixo=0;
 
-
-	echo "<br>";
-	echo "SE Md pouco(".$capital.")= ". number_format($mdpouco,2)." OU Mp insuficiente(".$pessoas.")= ".$mpinsuficiente." ENTÃO Mr alto(".number_format($mralto1,2).")";
-	echo "<br>";
-	echo "SE Md pouco(".$capital.")= ".number_format($mdpouco,2)." E Mp satisfatorio(".$pessoas.")= ".$mpsatisfatorio." ENTÃO Mr alto(".number_format($mralto2,2).")";
-	echo "<br>";
-	echo "SE Md razoavel(".$capital.")= ".number_format($mdrazoavel,2)." E Mp satisfatorio(".$pessoas.")= ".$mpsatisfatorio." ENTÃO Mr médio(".number_format($mrmedio,2).")";
-	echo "<br>";
-	echo "SE Md adequado(".$capital.")= ".number_format($mdadequado, 2)." E Mp satisfatorio(". $pessoas.")= ".$mpsatisfatorio." ENTÃO Mr baixo(".number_format($mrbaixo,2).")";
+	echo "<br><table>";
+		echo "<tr>";
+			echo "<td class='pag2'>SE Md pouco(".$capital.")= ". number_format($mdpouco,2)."</td> <td class='pag2'>OU</td> <td class='pag2'>Mp insuficiente(".$pessoas.")= ".$mpinsuficiente."</td><td class='pag2'>ENTÃO</td> <td class='pag2'>Mr alto(".number_format($mralto1,2).")</td>";
+		echo "</tr>";
+		echo "<tr>";
+			echo "<td class='pag2'>SE Md pouco(".$capital.")= ".number_format($mdpouco,2)."</td> <td class='pag2'>E</td> <td class='pag2'>Mp satisfatorio(".$pessoas.")= ".$mpsatisfatorio."</td><td class='pag2'>ENTÃO</td> <td class='pag2'>Mr alto(".number_format($mralto2,2).")</td>";
+		echo "</tr>";
+		echo "<tr>";
+			echo "<td class='pag2'>SE Md razoavel(".$capital.")= ".number_format($mdrazoavel,2)."</td> <td class='pag2'>E</td> <td class='pag2'>Mp satisfatorio(".$pessoas.")= ".$mpsatisfatorio."</td><td class='pag2'>ENTÃO</td> <td class='pag2'>Mr médio(".number_format($mrmedio,2).")</td>";
+		echo "</tr>";
+		echo "<tr>";
+			echo "<td class='pag2'>SE Md adequado(".$capital.")= ".number_format($mdadequado, 2)."</td> <td class='pag2'>E</td> <td class='pag2'>Mp satisfatorio(". $pessoas.")= ".$mpsatisfatorio."</td> <td class='pag2'>ENTÃO</td> <td class='pag2'>Mr baixo(".number_format($mrbaixo,2).")</td>";
+		echo "</tr>";
+	echo "</table>";
 
 	#pegando o maior valor de Mralto
 	$mraltomax = max($mralto1, $mralto2);
@@ -178,10 +184,13 @@
 		'alto' => $difMralto,
 	);
 
-	echo "<h3><strong><br><br>A categoria de risco que o projeto se encaixa é ".array_search(min($risco), $risco). ", uma vez que o valor ". number_format($cog , 2)." tem o maior grau de pertinência nessa saída! </strong></h3>";
+	echo "<h3><strong><br>A categoria de risco que o projeto se encaixa é ".array_search(min($risco), $risco). ", uma vez que o valor ". number_format($cog , 2)." tem o maior grau de pertinência nessa saída! </strong></h3>";
 
 	echo "<br><br>";
 
-	echo "<p>Para realizar uma nova análise, clique <a href='index.php'>aqui</a>!</p>";
+	echo "<p>Para realizar uma nova análise, clique <a href='index.php'>aqui</a>!</p><br><br>";
 
+	echo "<div class='footer'>";
+		echo "<p class='rodape'>IFTM - ADS_V - IA - Ronivon Mendes</p>";
+	echo "</div>";
 ?>
